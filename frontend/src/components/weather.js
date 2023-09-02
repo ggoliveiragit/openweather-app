@@ -1,7 +1,8 @@
 // src/components/Weather.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Form, Button, Alert, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+
 
 const cities = ['Lisbon', 'Leiria', 'Coimbra', 'Porto', 'Faro'];
 
@@ -25,6 +26,7 @@ function Weather() {
         fetchData();
       }, []);
 
+      
       return (
         <Container bg="dark">
           <h1 className="mt-5">Weather App</h1>
@@ -32,7 +34,7 @@ function Weather() {
             {weatherData !== null ? (
               weatherData.map((data, index) => (
                 <Col key={index} md={4} className="mb-3">
-                  <Card border="success" bg="dark" text="light" style={{ width: '18rem' }}>
+                  <Card border="info" bg="dark" text="light" style={{ width: '18rem' }}>
                     <Card.Body>
                       <h2>{data.name}, {data.sys.country}</h2>
                       <p>Max : {data.main.temp_max}°C</p>
