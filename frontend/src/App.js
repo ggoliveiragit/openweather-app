@@ -4,6 +4,7 @@ import Weather from './components/weather';
 import './App.css';
 import Moment from 'react-moment';
 import LoginForm from './components/LoginForm';
+import { Button, Row, Col } from 'react-bootstrap';
 
 
 
@@ -23,9 +24,17 @@ function App() {
     <div className="App">
       {isLoggedIn ? (
         <>
-          <Moment local interval={1}></Moment>
-          <button className="logoutButton" onClick={handleLogout}>Logout</button>
-          <Weather />
+          <br></br>
+          <Row >
+            <Col sm={10}></Col>
+            <Col sm={2}><Button className="logoutButton" variant="outline-danger" onClick={handleLogout}>Logout</Button></Col>
+            
+            </Row>
+            <h1>My Weather App</h1>
+          <Row >
+            <Moment local interval={1}></Moment>      
+          </Row>
+          <Weather/>
           
         </>
       ) : (

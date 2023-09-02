@@ -1,4 +1,5 @@
 body{
+  overflow-x: hidden;
   color: white;
   
   
@@ -28,14 +29,14 @@ body{
   background-color: rgb(19, 19, 19);
   color: white;
   border:2px solid grey;
-  scale: 1;
-  padding: 20px;
+  scale: 0.9;
+  padding: 10px;
   
  }
 
  .weatherCard:hover{
-  border:4px solid #ec6e4c;
-  scale: 1.05;
+  border:3px solid #ec6e4c;
+  scale: 0.95;
   background-color: rgb(44, 44, 44);
   transition: 0.05s ;
   

@@ -33,7 +33,7 @@ function Weather() {
 
     <Container bg="dark">
 
-      <h1 className="mt-5">My Weather App</h1>
+      
       <Row className="mt-3">
         {weatherData !== null ? (
 
