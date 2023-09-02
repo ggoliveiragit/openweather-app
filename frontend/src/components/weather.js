@@ -33,7 +33,7 @@ function Weather() {
 
     <Container bg="dark">
 
-      <h1 className="mt-5">Weather App</h1>
+      <h1 className="mt-5">My Weather App</h1>
       <Row className="mt-3">
         {weatherData !== null ? (
 
@@ -56,8 +56,10 @@ function Weather() {
                       <div className='min'>{data.main.temp_min}°C</div>
                     </Col>
                   </Row>
-
-                  <p>Humidity: {data.main.humidity}%</p>
+                    
+                  <div>Humidity: {data.main.humidity}%</div>
+                  
+                  
                   
 
                   
