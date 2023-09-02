@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { Card, Form, Button, Row, Col} from 'react-bootstrap';
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -24,21 +24,36 @@ function LoginForm({ onLogin }) {
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
+
+      <Card align="center" className='loginCard'> 
+      <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-4" controlId="formBasicUser">
+        <Row >
+          <Col sm={3}><Form.Label >Username</Form.Label></Col>
+          <Col sm={9}><Form.Control type="text"
           placeholder="Username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
+          onChange={(e) => setUsername(e.target.value)} /></Col>
+        </Row>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        
+      <Row>
+          <Col sm={3}><Form.Label >Password</Form.Label></Col>
+          <Col sm={9}><Form.Control type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
+          onChange={(e) => setPassword(e.target.value)} /></Col>
+        </Row>
+      </Form.Group>
+      <Button  variant="outline-light" type="submit">
+        Submit
+      </Button>
+    </Form>
+    </Card>
+
+
     </div>
   );
 }
