@@ -36,9 +36,10 @@ body{
 
  .weatherCard:hover{
   border:3px solid #ec6e4c;
+  background-color: rgb(19, 19, 19);
   scale: 0.95;
   background-color: rgb(44, 44, 44);
-  transition: 0.05s ;
+  transition: 0.5s ;
   
   .max{
     color: #ff5f57;
