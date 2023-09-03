@@ -26,8 +26,9 @@ function App() {
         <>
           <br></br>
           <Row >
-            <Col sm={10}></Col>
-            <Col sm={2}><Button className="logoutButton" variant="outline-danger" onClick={handleLogout}>Logout</Button></Col>
+            <Col sm={9}></Col>
+            <Col sm={2}><Button className="logoutButton" variant="outline-light" onClick={handleLogout}>Light Mode</Button></Col>
+            <Col sm={1}><Button className="logoutButton" variant="outline-danger" onClick={handleLogout}>Logout</Button></Col>
             
             </Row>
             <h1>My Weather App</h1>

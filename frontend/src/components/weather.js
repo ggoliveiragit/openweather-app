@@ -5,7 +5,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 
 
-const cities = ['Lisbon', 'Leiria', 'Coimbra', 'Porto', 'Faro',];
+const cities = ['Lisbon', 'Leiria', 'Coimbra', 'Porto', 'Faro,',];
 
 function Weather() {
   const [weatherData, setWeatherData] = useState(null);
