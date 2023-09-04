@@ -2,13 +2,9 @@ body{
   overflow-x: hidden;
   color: white;
   
-  
-  
-  
-  
-  
+
     --s: 100px; /* control the size */
-    --c1: #222222;
+    --c1: #202020;
     --c2: #000000;
     
     --_g: 
@@ -24,10 +20,7 @@ body{
   }
   
   
-  
-  
-  
-  
+
  .weatherCard{
   background-color: rgb(19, 19, 19);
   color: white;

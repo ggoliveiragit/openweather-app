@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Weather from './components/weather';
 import './App.css';
@@ -16,6 +16,7 @@ function App() {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
   };
 
@@ -26,8 +27,8 @@ function App() {
         <>
           <br></br>
           <Row >
-            <Col sm={9}></Col>
-            <Col sm={2}><Button className="logoutButton" variant="outline-light" onClick={handleLogout}>Light Mode</Button></Col>
+            <Col sm={11}></Col>
+           
             <Col sm={1}><Button className="logoutButton" variant="outline-danger" onClick={handleLogout}>Logout</Button></Col>
             
             </Row>

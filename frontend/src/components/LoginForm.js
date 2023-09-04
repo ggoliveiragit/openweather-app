@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Card, Form, Button, Row, Col} from 'react-bootstrap';
+
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,9 +19,13 @@ function LoginForm({ onLogin }) {
       console.log('Login success:', response.data);
       onLogin();
     } catch (error) {
+      //Error handling
+      setError('Invalid username or password');
       console.error('Login failed:', error.response.data.message);
     }
   };
+
+  
 
   return (
     <div>
@@ -47,7 +53,8 @@ function LoginForm({ onLogin }) {
           onChange={(e) => setPassword(e.target.value)} /></Col>
         </Row>
       </Form.Group>
-      <Button  variant="outline-light" type="submit">
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <Button variant="outline-light" type="submit">
         Submit
       </Button>
     </Form>

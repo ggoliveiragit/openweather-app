@@ -1,9 +1,13 @@
 // weather-app/server.js
 const express = require('express');
-const bodyParser = require('body-parser');
+const session = require('express-session');
 const cors = require('cors');
 const axios = require('axios');
-const session = require('express-session');
+
+const bodyParser = require('body-parser');
+
+
+
 const app = express();
 const port = 5000;
 
@@ -15,7 +19,7 @@ app.use(express.json());
 // Use express-session to manage sessions
 app.use(
   session({
-    secret: 'your-secret-key',
+    secret: 'secretkey123',
     resave: false,
     saveUninitialized: true,
   })
@@ -37,7 +41,9 @@ app.post('/login', (req, res) => {
     return res.status(401).json({ message: 'Invalid credentials' });
   }
 
-  return res.json({ message: 'Login successful', user });
+  // Store user data in the session
+  req.session.user = user;
+  return res.json({ message: 'Login successful'});
 });
 
 // Logout route
@@ -56,13 +62,11 @@ app.get('/api/weather/:city', async (req, res) => {
   try {
     const city = req.params.city;
     const apiKey = 'c51dedb5d6ca59dd6b5fc6be1e14316f';
-    //const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${city}&appid=${apiKey}`;
     const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+req.params.city+'&appid='+apiKey+'&units=metric';
-    
-    
     
     const response = await axios.get(apiUrl);
     res.json(response.data);
+    
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while fetching weather data.' });
   }
