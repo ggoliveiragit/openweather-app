@@ -1,9 +1,14 @@
 # openweather-app
 
 ### Frontend
-Install on ./frontend/ the modules: ***react, react-moment, react-bootstrap and axios***. Run server with npm start afterwards
+Install on ./frontend/ the modules: ***react, react-moment, react-bootstrap and axios***. 
+
+Run server with npm start afterwards, should run on port 3000
+#
 ### Backend
-Install on ./ the modules: ***express, express-session, cors and axios***. Run server with npm start afterwards
+Install on ./ the modules: ***express, express-session, cors and axios***. 
+
+Run server with npm start afterwards, should run on port 5000
 
 #
 if you want to add more cities edit weather.js on line 8
