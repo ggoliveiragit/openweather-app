@@ -1,4 +1,3 @@
-// src/components/Weather.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Card } from 'react-bootstrap';
@@ -10,7 +9,7 @@ const cities = ['Lisbon', 'Leiria', 'Coimbra', 'Porto', 'Faro,',];
 function Weather() {
   const [weatherData, setWeatherData] = useState(null);
 
-
+  //request backend on load
   useEffect(() => {
     async function fetchData() {
       const weatherDataPromises = cities.map(async (city) => {
@@ -27,13 +26,9 @@ function Weather() {
     fetchData();
   }, []);
 
-
-
   return (
 
     <Container bg="dark">
-
-      
       <Row className="mt-3">
         {weatherData !== null ? (
 
@@ -43,26 +38,19 @@ function Weather() {
               <Card className="weatherCard" >
                 <Card.Body>
 
-
-
                   <h2>{data.name}, {data.sys.country}</h2>
                   <img src={"https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"}></img>
                   <h4>{data.weather[0].description}</h4>
                   <Row>
-                    <Col style={{display:'flex', justifyContent:'right'}}>
+                    <Col style={{ display: 'flex', justifyContent: 'right' }}>
                       <div className='max'>{data.main.temp_max}°C</div>
                     </Col>
-                    <Col style={{display:'flex', justifyContent:'left'}}>
+                    <Col style={{ display: 'flex', justifyContent: 'left' }}>
                       <div className='min'>{data.main.temp_min}°C</div>
                     </Col>
                   </Row>
-                    
-                  <div>Humidity: {data.main.humidity}%</div>
-                  
-                  
-                  
 
-                  
+                  <div>Humidity: {data.main.humidity}%</div>
 
                 </Card.Body>
               </Card>
